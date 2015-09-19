@@ -177,8 +177,9 @@ class SubCategories extends \Phalcon\Mvc\Model
         return $this->sub_cat_decription;
     }
 
+
     /**
-     * Initialize method for model.
+     * Defines the relationships
      */
     public function initialize()
     {

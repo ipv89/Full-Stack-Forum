@@ -206,8 +206,9 @@ class Topics extends \Phalcon\Mvc\Model
         return $this->topic_created_date;
     }
 
+
     /**
-     * Initialize method for model.
+     * Defines the relationships
      */
     public function initialize()
     {

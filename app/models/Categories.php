@@ -177,8 +177,9 @@ class Categories extends \Phalcon\Mvc\Model
         return $this->date_modified;
     }
 
+
     /**
-     * Initialize method for model.
+     * Defines the relationships
      */
     public function initialize()
     {

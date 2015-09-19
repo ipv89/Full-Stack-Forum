@@ -199,7 +199,7 @@ class Users extends \Phalcon\Mvc\Model
     }
 
     /**
-     * Initialize method for model.
+     * Defines the relationships
      */
     public function initialize()
     {

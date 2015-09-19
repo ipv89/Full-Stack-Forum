@@ -177,8 +177,9 @@ class Replies extends \Phalcon\Mvc\Model
         return $this->reply_created_date;
     }
 
+
     /**
-     * Initialize method for model.
+     * Defines the relationships
      */
     public function initialize()
     {
