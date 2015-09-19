@@ -1,0 +1,66 @@
+<?php echo \Phalcon\Tag::form("replies/create") ?>
+
+<table width="100%">
+    <tr>
+        <td align="left"><?php echo \Phalcon\Tag::linkTo(array("replies", "Go Back")) ?></td>
+        <td align="right"><?php echo \Phalcon\Tag::submitButton("Save") ?></td>
+    <tr>
+</table>
+
+<?php echo $this->getContent(); ?>
+
+<div align="center">
+    <h1>Create replies</h1>
+</div>
+
+    <table align="center">
+        <tr>
+            <td align="right">
+                <label for="reply_id">Reply</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("reply_id", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="users_user_id">Users Of User</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("users_user_id", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="topics_topic_id">Topics Of Topic</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("topics_topic_id", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="topics_users_user_id">Topics Of Users Of User</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("topics_users_user_id", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="reply_body">Reply Of Body</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("reply_body", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="reply_created_date">Reply Of Created Of Date</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("reply_created_date", "size" => 30)) ?>
+            </td>
+        </tr>
+    </table>
+<?php echo \Phalcon\Tag::endForm() ?>

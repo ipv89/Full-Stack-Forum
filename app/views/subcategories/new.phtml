@@ -1,0 +1,66 @@
+<?php echo \Phalcon\Tag::form("subcategories/create") ?>
+
+<table width="100%">
+    <tr>
+        <td align="left"><?php echo \Phalcon\Tag::linkTo(array("subcategories", "Go Back")) ?></td>
+        <td align="right"><?php echo \Phalcon\Tag::submitButton("Save") ?></td>
+    <tr>
+</table>
+
+<?php echo $this->getContent(); ?>
+
+<div align="center">
+    <h1>Create sub categories</h1>
+</div>
+
+    <table align="center">
+        <tr>
+            <td align="right">
+                <label for="sub_cat_id">Sub Of Cat</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("sub_cat_id", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="categories_cat_id">Categories Of Cat</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("categories_cat_id", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="sub_cat_name">Sub Of Cat Of Name</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("sub_cat_name", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="sub_cat_created_date">Sub Of Cat Of Created Of Date</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("sub_cat_created_date", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="users_user_id">Users Of User</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("users_user_id", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="sub_cat_decription">Sub Of Cat Of Decription</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("sub_cat_decription", "size" => 30)) ?>
+            </td>
+        </tr>
+    </table>
+<?php echo \Phalcon\Tag::endForm() ?>

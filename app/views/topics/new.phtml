@@ -1,0 +1,74 @@
+<?php echo \Phalcon\Tag::form("topics/create") ?>
+
+<table width="100%">
+    <tr>
+        <td align="left"><?php echo \Phalcon\Tag::linkTo(array("topics", "Go Back")) ?></td>
+        <td align="right"><?php echo \Phalcon\Tag::submitButton("Save") ?></td>
+    <tr>
+</table>
+
+<?php echo $this->getContent(); ?>
+
+<div align="center">
+    <h1>Create topics</h1>
+</div>
+
+    <table align="center">
+        <tr>
+            <td align="right">
+                <label for="topic_id">Topic</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("topic_id", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="users_user_id">Users Of User</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("users_user_id", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="sub_categories_sub_cat_id">Sub Of Categories Of Sub Of Cat</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("sub_categories_sub_cat_id", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="sub_categories_categories_cat_id">Sub Of Categories Of Categories Of Cat</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("sub_categories_categories_cat_id", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="topic_name">Topic Of Name</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("topic_name", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="topic_body">Topic Of Body</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("topic_body", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="topic_created_date">Topic Of Created Of Date</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("topic_created_date", "size" => 30)) ?>
+            </td>
+        </tr>
+    </table>
+<?php echo \Phalcon\Tag::endForm() ?>

@@ -1,0 +1,60 @@
+<?php $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo \Phalcon\Tag::linkTo(array("topics/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo \Phalcon\Tag::linkTo(array("topics/new", "Create topics")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>Topic</th>
+            <th>Users Of User</th>
+            <th>Sub Of Categories Of Sub Of Cat</th>
+            <th>Sub Of Categories Of Categories Of Cat</th>
+            <th>Topic Of Name</th>
+            <th>Topic Of Body</th>
+            <th>Topic Of Created Of Date</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+        if(isset($page->items)){
+            foreach($page->items as $topics){ ?>
+        <tr>
+            <td><?php echo $topics->topic_id ?></td>
+            <td><?php echo $topics->users_user_id ?></td>
+            <td><?php echo $topics->sub_categories_sub_cat_id ?></td>
+            <td><?php echo $topics->sub_categories_categories_cat_id ?></td>
+            <td><?php echo $topics->topic_name ?></td>
+            <td><?php echo $topics->topic_body ?></td>
+            <td><?php echo $topics->topic_created_date ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("topics/edit/".$topics->topic_id, "Edit")); ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("topics/delete/".$topics->topic_id, "Delete")); ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("topics/details/".$topics->topic_id, "Details")); ?></td>
+        </tr>
+    <?php }
+        } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="7" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo \Phalcon\Tag::linkTo("topics/search", "First") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("topics/search?page=".$page->before, "Previous") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("topics/search?page=".$page->next, "Next") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("topics/search?page=".$page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>

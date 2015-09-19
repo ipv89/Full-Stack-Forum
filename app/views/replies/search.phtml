@@ -1,0 +1,57 @@
+<?php $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo \Phalcon\Tag::linkTo(array("replies/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo \Phalcon\Tag::linkTo(array("replies/new", "Create replies")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>Reply</th>
+            <th>Users Of User</th>
+            <th>Topics Of Topic</th>
+            <th>Topics Of Users Of User</th>
+            <th>Reply Of Body</th>
+            <th>Reply Of Created Of Date</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+        if(isset($page->items)){
+            foreach($page->items as $replies){ ?>
+        <tr>
+            <td><?php echo $replies->reply_id ?></td>
+            <td><?php echo $replies->users_user_id ?></td>
+            <td><?php echo $replies->topics_topic_id ?></td>
+            <td><?php echo $replies->topics_users_user_id ?></td>
+            <td><?php echo $replies->reply_body ?></td>
+            <td><?php echo $replies->reply_created_date ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("replies/edit/".$replies->reply_id/$replies->users_user_id/$replies->topics_topic_id/$replies->topics_users_user_id, "Edit")); ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("replies/delete/".$replies->reply_id/$replies->users_user_id/$replies->topics_topic_id/$replies->topics_users_user_id, "Delete")); ?></td>
+        </tr>
+    <?php }
+        } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="6" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo \Phalcon\Tag::linkTo("replies/search", "First") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("replies/search?page=".$page->before, "Previous") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("replies/search?page=".$page->next, "Next") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("replies/search?page=".$page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>

@@ -1,0 +1,25 @@
+<?php echo $this->getContent(); ?>
+<div align="right">
+    <?php echo \Phalcon\Tag::linkTo(array("users/new", "Create Users")) ?>
+</div>
+
+<div align="center">
+    <h1>Search users</h1>
+    <?php echo \Phalcon\Tag::form(array("users/search")) ?>
+    <table align="center">
+        <tr>
+            <td align="right">
+                <label for="user_id">User</label>
+            </td>
+            <td align="left">
+                this user id: <input type="text" name="user_id"><br>
+            </td>
+        </tr>
+
+
+        <tr>
+            <input type="submit">
+        </tr>
+    </table>
+</form>
+</div>

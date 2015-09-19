@@ -1,0 +1,44 @@
+<?php echo \Phalcon\Tag::form("categories/create") ?>
+
+<table width="100%">
+    <tr>
+        <td align="left"><?php echo \Phalcon\Tag::linkTo(array("categories", "Go Back")) ?></td>
+        <td align="right"><?php echo \Phalcon\Tag::submitButton("Save") ?></td>
+    <tr>
+</table>
+
+<?php echo $this->getContent(); ?>
+
+<div align="center">
+    <h1>Create categories</h1>
+</div>
+
+    <table align="center">
+
+        <tr>
+            <td align="right">
+                <label for="cat_name">Category Name</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("cat_name", "size" => 30)) ?>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right">
+                <label for="users_user_id">Users Of User</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("users_user_id", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="cat_decription">Decription</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("cat_decription", "size" => 30)) ?>
+            </td>
+        </tr>
+    </table>
+<?php echo \Phalcon\Tag::endForm() ?>

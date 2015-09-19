@@ -1,0 +1,57 @@
+<?php $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo \Phalcon\Tag::linkTo(array("subcategories/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo \Phalcon\Tag::linkTo(array("subcategories/new", "Create sub categories")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>Sub Of Cat</th>
+            <th>Categories Of Cat</th>
+            <th>Sub Of Cat Of Name</th>
+            <th>Sub Of Cat Of Created Of Date</th>
+            <th>Users Of User</th>
+            <th>Sub Of Cat Of Decription</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+        if(isset($page->items)){
+            foreach($page->items as $subcategories){ ?>
+        <tr>
+            <td><?php echo $subcategories->sub_cat_id ?></td>
+            <td><?php echo $subcategories->categories_cat_id ?></td>
+            <td><?php echo $subcategories->sub_cat_name ?></td>
+            <td><?php echo $subcategories->sub_cat_created_date ?></td>
+            <td><?php echo $subcategories->users_user_id ?></td>
+            <td><?php echo $subcategories->sub_cat_decription ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("subcategories/edit/".$subcategories->sub_cat_id/$subcategories->categories_cat_id/$subcategories->users_user_id, "Edit")); ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("subcategories/delete/".$subcategories->sub_cat_id/$subcategories->categories_cat_id/$subcategories->users_user_id, "Delete")); ?></td>
+        </tr>
+    <?php }
+        } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="6" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo \Phalcon\Tag::linkTo("subcategories/search", "First") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("subcategories/search?page=".$page->before, "Previous") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("subcategories/search?page=".$page->next, "Next") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("subcategories/search?page=".$page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>
