@@ -12,7 +12,8 @@ class TopicsController extends ControllerBase
 
     public function detailsAction($topic_id){
         /*
-@TODO get all replies */
+@TODO get all replies
+        @TODO list replies in date/time order */
 
      //Get all replies related to the topic_id
 
